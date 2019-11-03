@@ -8,15 +8,16 @@ const Log = require("./helpers/Log");
 const authCheck = require("./middlewares/authCheck");
 
 // URL à renseigner
-const mongodbUrl = "";
+const mongodbUrl = process.env.MONGO_ATLAS_URL;
 
 mongoose
-  .connect(mongodbUrl, { useNewUrlParser: true })
+  .connect(mongodbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true // https://stackoverflow.com/a/51918795
+  })
   .then(res => Log("Connected to MongoDB"))
   .catch(error => Log(error, "error"));
-
-// https://stackoverflow.com/a/51918795
-mongoose.set("useCreateIndex", true);
 
 /* DEBUT MIDDLEWARES */
 // Logging infos (morgan) https://github.com/expressjs/morgan
