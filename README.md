@@ -5,6 +5,7 @@
 Créer un fichier nodemon.json, y renseigner un objet avec les clés suivantes (remplies avec les valeurs correspondantes évidemment) :
 
 > MONGO_ATLAS_URL
+
 > JWT_KEY
 
 Puis lancer la commande suivante pour installer les modules node : `npm i`
