@@ -1,0 +1,6 @@
+{
+  "env": {
+    "MONGO_ATLAS_URL": "YOUR_MONGO_ATLAS_URL",
+    "JWT_KEY": "YOUR_JWT_KEY"
+  }
+}
